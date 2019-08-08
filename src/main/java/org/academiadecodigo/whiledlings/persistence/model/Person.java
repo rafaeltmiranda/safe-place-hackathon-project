@@ -41,4 +41,12 @@ public class Person extends AbstractModel {
     public List<Answer> getAnswersList() {
         return answers;
     }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public void saveAnswer(Answer answer) {
+        answers.add(answer);
+    }
 }

@@ -7,6 +7,7 @@ import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.academiadecodigo.whiledlings.persistence.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class PersonServiceImpl implements PersonService {
         return jpaPersonDao.getById(id);
     }
 
+    @Transactional
     @Override
     public Person createNewPerson(Person person) throws PersonNotFoundException {
 
@@ -45,6 +47,7 @@ public class PersonServiceImpl implements PersonService {
         return person;
     }
 
+    @Transactional
     @Override
     public void deletePersonRespectfully(Integer id) throws PersonNotFoundException {
 
@@ -58,14 +61,18 @@ public class PersonServiceImpl implements PersonService {
         jpaPersonDao.delete(id);
     }
 
+    @Transactional
     @Override
-    public void saveAnswer(Answer answer) throws AnswerNotFoundException {
+    public void saveAnswer(Answer answer, Integer personId) throws PersonNotFoundException {
 
-        if(answer == null){
+        Person person = jpaPersonDao.getById(personId);
 
-            throw new AnswerNotFoundException();
+        if(person == null){
+
+            throw new PersonNotFoundException();
         }
 
+          person.saveAnswer(answer);
           answerService.saveAnswer(answer);
     }
 
