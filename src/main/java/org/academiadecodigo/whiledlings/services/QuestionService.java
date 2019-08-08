@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface QuestionService {
 
-    List<Option> getOptionsList();
+    Question getQuestion(Integer questionId);
 
 }

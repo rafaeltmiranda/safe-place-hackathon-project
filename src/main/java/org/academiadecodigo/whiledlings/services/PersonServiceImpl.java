@@ -76,6 +76,6 @@ public class PersonServiceImpl implements PersonService {
 
         List<Answer> listAnswers = person.getAnswersList();
 
-        return listAnswers;  // TODO: 08/08/2019
+        return listAnswers;
     }
 }
