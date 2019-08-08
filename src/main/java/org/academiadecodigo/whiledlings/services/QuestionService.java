@@ -11,8 +11,4 @@ public interface QuestionService {
 
     List<Option> getOptionsList();
 
-    void addOption(Option option);
-
-    Option changeOption(Integer optionId);
-
 }
