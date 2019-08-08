@@ -1,4 +1,6 @@
 package org.academiadecodigo.whiledlings.persistence.dao;
 
-public interface PersonDao {
+import org.academiadecodigo.whiledlings.persistence.model.Person;
+
+public interface PersonDao extends Dao<Person> {
 }
