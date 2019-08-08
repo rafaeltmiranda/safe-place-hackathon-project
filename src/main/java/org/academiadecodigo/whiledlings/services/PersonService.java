@@ -15,7 +15,7 @@ public interface PersonService{
 
     void deletePersonRespectfully(Integer id) throws PersonNotFoundException;
 
-    void saveAnswer(Answer answer) throws AnswerNotFoundException;
+    void saveAnswer(Answer answer, Integer personId) throws AnswerNotFoundException, PersonNotFoundException;
 
     List<Answer> getAnswers(Integer id);
 }
