@@ -5,6 +5,6 @@ import org.academiadecodigo.whiledlings.exceptions.errors.ErrorMessage;
 public class QuestionNotFoundException extends OurCorlorsNotFoundException {
 
     public QuestionNotFoundException() {
-        super(ErrorMessage.QUESTION_NOT_FOUD);
+        super(ErrorMessage.QUESTION_NOT_FOUND);
     }
 }
