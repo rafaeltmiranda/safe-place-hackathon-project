@@ -34,13 +34,13 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Person getById(Integer id) {
 
-        return jpaPersonDao.findById(id);
+        return jpaPersonDao.getById(id);
     }
 
     @Override
     public Integer createNewPerson(Person person) {
 
-        if(person == null || jpaPersonDao.contains(person)){
+        if(person.getId() != null){
 
             // TODO: 08/08/2019 atualizar throw com excecoes
         }
@@ -53,7 +53,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public void deletePersonRespectfully(Integer id) {
 
-        Person person = jpaPersonDao.findById(id);
+        Person person = jpaPersonDao.getById(id);
 
         if(person.getId() == null){
 
@@ -77,10 +77,10 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<Answer> getAnswers(Integer id) {
 
-        Answer answer = jpaAnswerDao.findById(id);
+        Answer answer = jpaAnswerDao.getById(id);
 
-        jpaAnswerDao.getList(id)
-                
+        jpaAnswerDao.findAll();
+
         return null;  // TODO: 08/08/2019
     }
 }

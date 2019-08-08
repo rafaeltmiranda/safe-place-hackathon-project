@@ -34,19 +34,19 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public void addQuestion(Question question) {
 
-        jpaQuestionDao.addQuestion(question);
+        jpaQuestionDao.saveOrUpdate(question);
     }
 
     @Override
     public List<Option> getOptionsList() {
 
-        return jpaOptionDao.getList();
+        return jpaOptionDao.findAll();
     }
 
     @Override
-    public void addOption(Option option) {
+    public void addOption(Option option, Integer id) {
 
-        optionService.addOption(option);  // TODO: 08/08/2019 parametro para option
+        optionService.addOption(option, id);
     }
 
     @Override

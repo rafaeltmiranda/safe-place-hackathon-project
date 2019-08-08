@@ -1,6 +1,7 @@
 package org.academiadecodigo.whiledlings.services;
 
 import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaAnswerDao;
+import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.academiadecodigo.whiledlings.persistence.model.Option;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,9 @@ public class OptionServiceImpl implements OptionService {
     }
 
     @Override
-    public void addOption(Option option) {
+    public void addOption(Option option, Integer id) {
 
-        jpaAnswerDao.addOption();
+        Answer answer = jpaAnswerDao.getById(id);
+
     }
 }
