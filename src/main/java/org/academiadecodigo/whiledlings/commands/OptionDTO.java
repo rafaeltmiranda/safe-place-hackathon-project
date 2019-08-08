@@ -6,11 +6,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class OptionDTO {
 
+    private int id;
+
     private Question question;
 
     private String option;
 
     private Integer idNextQuestion;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Question getQuestion() {
         return question;
