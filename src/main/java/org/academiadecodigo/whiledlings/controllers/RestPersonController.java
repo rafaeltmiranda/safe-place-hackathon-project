@@ -1,5 +1,6 @@
 package org.academiadecodigo.whiledlings.controllers;
 
+import org.academiadecodigo.whiledlings.exceptions.PersonNotFoundException;
 import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.academiadecodigo.whiledlings.persistence.model.Person;
 import org.academiadecodigo.whiledlings.services.AnswerService;
@@ -46,7 +47,11 @@ public class RestPersonController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        personService.createNewPerson(person);
+        try {
+            personService.createNewPerson(person);
+        } catch (PersonNotFoundException e) {
+            // TODO: 08/08/2019 coiso
+        }
         // TODO: 08/08/2019 analyse this better, does it make sense that the createNewPerson method returns a Person?
 
         return new ResponseEntity<>(HttpStatus.OK);
@@ -59,7 +64,11 @@ public class RestPersonController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        personService.deletePersonRespectfully(id);
+        try {
+            personService.deletePersonRespectfully(id);
+        } catch (PersonNotFoundException e) {
+            // TODO: 08/08/2019 coiso
+        }
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -74,15 +83,5 @@ public class RestPersonController {
         List<Answer> listOfAnswers = personService.getAnswers(id);
 
         return new ResponseEntity<>(listOfAnswers, HttpStatus.OK);
-    }
-
-    @RequestMapping(method = RequestMethod.PUT, path = "/new-answer")
-    public ResponseEntity<?> saveAnswer(@Valid @RequestBody Answer answer){
-
-        // TODO: 08/08/2019 what if the answer is empty? add shit to prevent that
-        // TODO: 08/08/2019 also, i must receive here pid and qid, i think
-
-        personService.saveAnswer(answer);
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
