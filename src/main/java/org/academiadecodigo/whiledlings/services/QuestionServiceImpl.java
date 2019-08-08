@@ -32,12 +32,6 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public void addQuestion(Question question) {
-
-        jpaQuestionDao.saveOrUpdate(question);
-    }
-
-    @Override
     public List<Option> getOptionsList() {
 
         return jpaOptionDao.findAll();

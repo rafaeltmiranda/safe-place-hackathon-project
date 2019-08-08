@@ -30,6 +30,7 @@ public class RestQuestionController {
     public ResponseEntity<List<Option>> showOptions(@PathVariable Integer qid){
 
         List<Option> optionsList = questionService.getOptionsList();
+        // TODO: 08/08/2019 get question by id and manipulate from there
 
 
         return new ResponseEntity<>(optionsList, HttpStatus.OK);
