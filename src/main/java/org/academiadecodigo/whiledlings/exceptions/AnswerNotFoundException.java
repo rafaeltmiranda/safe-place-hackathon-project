@@ -6,6 +6,6 @@ public class AnswerNotFoundException extends OurCorlorsNotFoundException {
 
     public AnswerNotFoundException() {
 
-        super(ErrorMessage.ANSWER_NOT_FOUD);
+        super(ErrorMessage.ANSWER_NOT_FOUND);
     }
 }
