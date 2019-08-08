@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("/question")
 public class RestQuestionController {
 
     private QuestionService questionService;
@@ -28,7 +29,6 @@ public class RestQuestionController {
     @RequestMapping(method = RequestMethod.GET, path = "/{qid}")
     public ResponseEntity<List<Option>> showOptions(@PathVariable Integer qid){
 
-        // TODO: 08/08/2019 this must be associated with a question id, passed as argument
         List<Option> optionsList = questionService.getOptionsList();
 
 

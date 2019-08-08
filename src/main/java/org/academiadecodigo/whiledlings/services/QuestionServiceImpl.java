@@ -3,7 +3,7 @@ package org.academiadecodigo.whiledlings.services;
 import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaOptionDao;
 import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaQuestionDao;
 import org.academiadecodigo.whiledlings.persistence.model.Option;
-import org.academiadecodigo.whiledlings.persistence.model.Question;
+import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/profile")
+@RequestMapping("/")
 public class RestPersonController {
 
     private PersonService personService;
@@ -37,7 +37,7 @@ public class RestPersonController {
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public ResponseEntity<?> addPerson(@Valid @RequestBody Person person, BindingResult bindingResult){
 
         // TODO: 08/08/2019 DTO here as well - fernando
@@ -76,7 +76,7 @@ public class RestPersonController {
         return new ResponseEntity<>(listOfAnswers, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "/{pid}/{qid}")
+    @RequestMapping(method = RequestMethod.PUT, path = "/new-answer")
     public ResponseEntity<?> saveAnswer(@Valid @RequestBody Answer answer){
 
         // TODO: 08/08/2019 what if the answer is empty? add shit to prevent that
