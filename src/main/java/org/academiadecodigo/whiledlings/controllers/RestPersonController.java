@@ -52,7 +52,6 @@ public class RestPersonController {
         } catch (PersonNotFoundException e) {
             // TODO: 08/08/2019 coiso
         }
-        // TODO: 08/08/2019 analyse this better, does it make sense that the createNewPerson method returns a Person?
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
