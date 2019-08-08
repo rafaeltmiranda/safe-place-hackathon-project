@@ -20,6 +20,10 @@ public class QuestionTypeOptions extends Question{
     )
     List<Option> options = new ArrayList<>();
 
+    public List<Option> getOptions() {
+        return options;
+    }
+
     @Override
     public QuestionType getQuestionType() {
         return QuestionType.OPTIONS;
