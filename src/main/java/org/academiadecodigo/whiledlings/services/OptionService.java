@@ -1,5 +1,7 @@
 package org.academiadecodigo.whiledlings.services;
 
+import org.academiadecodigo.whiledlings.persistence.model.Option;
+
 public interface OptionService {
 
     /**
@@ -7,6 +9,5 @@ public interface OptionService {
      * - receives question id as argument
      * @param id
      */
-    void addOption(Integer id);
 
 }
