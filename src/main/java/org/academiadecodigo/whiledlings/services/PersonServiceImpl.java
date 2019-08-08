@@ -1,6 +1,5 @@
 package org.academiadecodigo.whiledlings.services;
 
-import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaAnswerDao;
 import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaPersonDao;
 import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.academiadecodigo.whiledlings.persistence.model.Person;
@@ -13,17 +12,11 @@ import java.util.List;
 public class PersonServiceImpl implements PersonService {
 
     private JpaPersonDao jpaPersonDao;
-    private JpaAnswerDao jpaAnswerDao;
     private AnswerService answerService;
 
     @Autowired
     public void setJpaPersonDao(JpaPersonDao jpaPersonDao) {
         this.jpaPersonDao = jpaPersonDao;
-    }
-
-    @Autowired
-    public void setJpaAnswerDao(JpaAnswerDao jpaAnswerDao) {
-        this.jpaAnswerDao = jpaAnswerDao;
     }
 
     @Autowired
@@ -38,16 +31,16 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Integer createNewPerson(Person person) {
+    public Person createNewPerson(Person person) {
 
-        if(person.getId() != null){
+        if(jpaPersonDao.getById(person.getId()) != null){
 
             // TODO: 08/08/2019 atualizar throw com excecoes
         }
 
         jpaPersonDao.saveOrUpdate(person);
 
-        return null;  // TODO: 08/08/2019
+        return person;
     }
 
     @Override
@@ -77,10 +70,10 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<Answer> getAnswers(Integer id) {
 
-        Answer answer = jpaAnswerDao.getById(id);
+        Person person = jpaPersonDao.getById(id);
 
-        jpaAnswerDao.findAll();
+        List<Answer> listAnswers = person.listAnswers();
 
-        return null;  // TODO: 08/08/2019
+        return listAnswers;  // TODO: 08/08/2019
     }
 }

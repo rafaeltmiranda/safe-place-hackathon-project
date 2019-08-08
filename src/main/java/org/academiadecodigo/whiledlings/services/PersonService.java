@@ -9,7 +9,7 @@ public interface PersonService {
 
     Person getById(Integer id);
 
-    Integer createNewPerson(Person person);
+    Person createNewPerson(Person person);
 
     void deletePersonRespectfully(Integer id);
 

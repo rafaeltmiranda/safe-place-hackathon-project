@@ -9,6 +9,5 @@ public interface OptionService {
      * - receives question id as argument
      * @param id
      */
-    void addOption(Option option, Integer id);
 
 }

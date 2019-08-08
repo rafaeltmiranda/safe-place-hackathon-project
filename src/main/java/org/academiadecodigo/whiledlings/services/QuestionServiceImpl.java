@@ -42,18 +42,4 @@ public class QuestionServiceImpl implements QuestionService {
 
         return jpaOptionDao.findAll();
     }
-
-    @Override
-    public void addOption(Option option, Integer id) {
-
-        optionService.addOption(option, id);
-    }
-
-    @Override
-    public Option changeOption(Integer optionId) {
-
-        Option option = jpaOptionDao.findById(optionId);
-        
-        return option;   // TODO: 08/08/2019 falta um parametro 
-    }
 }

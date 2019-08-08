@@ -9,17 +9,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class OptionServiceImpl implements OptionService {
 
-    private JpaAnswerDao jpaAnswerDao;
-
-    @Autowired
-    public void setJpaAnswerDao(JpaAnswerDao jpaAnswerDao) {
-        this.jpaAnswerDao = jpaAnswerDao;
-    }
-
-    @Override
-    public void addOption(Option option, Integer id) {
-
-        Answer answer = jpaAnswerDao.getById(id);
-
-    }
 }
