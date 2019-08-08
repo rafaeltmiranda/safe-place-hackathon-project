@@ -82,7 +82,6 @@ public class RestPersonController {
         // TODO: 08/08/2019 what if the answer is empty? add shit to prevent that
         // TODO: 08/08/2019 also, i must receive here pid and qid, i think
 
-
         personService.saveAnswer(answer);
         return new ResponseEntity<>(HttpStatus.OK);
     }
