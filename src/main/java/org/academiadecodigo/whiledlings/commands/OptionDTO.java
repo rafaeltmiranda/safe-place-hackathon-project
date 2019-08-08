@@ -3,7 +3,7 @@ package org.academiadecodigo.whiledlings.commands;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class OptionDTO {
 
     private int id;

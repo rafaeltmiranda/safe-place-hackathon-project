@@ -4,7 +4,7 @@ import org.academiadecodigo.whiledlings.persistence.model.Person;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class AnswerDTO {
 
     private int id;
