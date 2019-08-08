@@ -18,16 +18,10 @@ import java.util.List;
 public class RestPersonController {
 
     private PersonService personService;
-    private AnswerService answerService;
 
     @Autowired
     public void setPersonService(PersonService personService) {
         this.personService = personService;
-    }
-
-    @Autowired
-    public void setAnswerService(AnswerService answerService) {
-        this.answerService = answerService;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
@@ -82,10 +76,12 @@ public class RestPersonController {
         return new ResponseEntity<>(listOfAnswers, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "/{pid}/{aid}")
-    public ResponseEntity<?> saveAnswer(@PathVariable Integer pid, @PathVariable Integer aid){
+    @RequestMapping(method = RequestMethod.PUT, path = "/{pid}/{qid}")
+    public ResponseEntity<?> saveAnswer(@Valid @RequestBody Answer answer){
 
-        // personService.saveAnswer();
+        // TODO: 08/08/2019 what if the answer is empty? add shit to prevent that
+
+        personService.saveAnswer(answer);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
