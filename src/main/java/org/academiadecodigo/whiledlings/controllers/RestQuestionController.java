@@ -1,6 +1,7 @@
 package org.academiadecodigo.whiledlings.controllers;
 
 import org.academiadecodigo.whiledlings.persistence.model.Option;
+import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 import org.academiadecodigo.whiledlings.services.QuestionService;
 import org.graalvm.compiler.nodes.calc.IntegerDivRemNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,10 @@ public class RestQuestionController {
     @RequestMapping(method = RequestMethod.GET, path = "/{qid}")
     public ResponseEntity<List<Option>> showOptions(@PathVariable Integer qid){
 
-        List<Option> optionsList = questionService.getOptionsList();
-        // TODO: 08/08/2019 get question by id and manipulate from there
+        //List<Option> optionsList = questionService.getOptionsList();
 
+        Question question = questionService.getQuestion(qid); // TODO: 08/08/2019 ricardo doing this
+        List<Option> optionsList = question.getOptions(); // TODO: 08/08/2019 hum
 
         return new ResponseEntity<>(optionsList, HttpStatus.OK);
     }
