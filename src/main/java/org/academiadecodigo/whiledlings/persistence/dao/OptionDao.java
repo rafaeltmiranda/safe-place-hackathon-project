@@ -1,4 +1,6 @@
 package org.academiadecodigo.whiledlings.persistence.dao;
 
-public interface OptionDao {
+import org.academiadecodigo.whiledlings.persistence.model.Option;
+
+public interface OptionDao extends Dao<Option>{
 }
