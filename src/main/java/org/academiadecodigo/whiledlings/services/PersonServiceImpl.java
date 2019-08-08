@@ -1,5 +1,7 @@
 package org.academiadecodigo.whiledlings.services;
 
+import org.academiadecodigo.whiledlings.exceptions.AnswerNotFoundException;
+import org.academiadecodigo.whiledlings.exceptions.PersonNotFoundException;
 import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaPersonDao;
 import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.academiadecodigo.whiledlings.persistence.model.Person;
@@ -31,11 +33,11 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person createNewPerson(Person person) {
+    public Person createNewPerson(Person person) throws PersonNotFoundException {
 
         if(jpaPersonDao.getById(person.getId()) != null){
 
-            // TODO: 08/08/2019 atualizar throw com excecoes
+            throw new PersonNotFoundException();
         }
 
         jpaPersonDao.saveOrUpdate(person);
@@ -44,24 +46,24 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void deletePersonRespectfully(Integer id) {
+    public void deletePersonRespectfully(Integer id) throws PersonNotFoundException {
 
         Person person = jpaPersonDao.getById(id);
 
         if(person.getId() == null){
 
-           // TODO: 08/08/2019 atualizar throw com excecoes
+           throw new PersonNotFoundException();
         }
 
         jpaPersonDao.delete(id);
     }
 
     @Override
-    public void saveAnswer(Answer answer) {
+    public void saveAnswer(Answer answer) throws AnswerNotFoundException {
 
         if(answer == null){
 
-            // TODO: 08/08/2019 atualizar throw com excecoes
+            throw new AnswerNotFoundException();
         }
 
           answerService.saveAnswer(answer);
@@ -72,7 +74,7 @@ public class PersonServiceImpl implements PersonService {
 
         Person person = jpaPersonDao.getById(id);
 
-        List<Answer> listAnswers = person.listAnswers();
+        List<Answer> listAnswers = person.getAnswersList();
 
         return listAnswers;  // TODO: 08/08/2019
     }
