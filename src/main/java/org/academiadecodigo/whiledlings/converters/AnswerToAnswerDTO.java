@@ -10,6 +10,6 @@ public class AnswerToAnswerDTO extends AbstractConverter<AnswerDTO, Answer> {
 
         AnswerDTO answerDTO = new AnswerDTO();
         answerDTO.setId(answer.getId());
-        answer.set
+        return null;
     }
 }
