@@ -10,6 +10,10 @@ public class AnswerToAnswerDTO extends AbstractConverter<AnswerDTO, Answer> {
 
         AnswerDTO answerDTO = new AnswerDTO();
         answerDTO.setId(answer.getId());
-        return null;
+        answerDTO.setAnswer(answer.getAnswer());
+        answerDTO.setQuestion(answer.getQuestion());
+        answerDTO.setPerson(answer.getPerson());
+
+        return  answerDTO;
     }
 }

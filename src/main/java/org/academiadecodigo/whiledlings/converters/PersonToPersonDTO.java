@@ -6,7 +6,12 @@ import org.academiadecodigo.whiledlings.persistence.model.Person;
 public class PersonToPersonDTO extends AbstractConverter<PersonDTO, Person> {
 
     @Override
-    public PersonDTO convert(Person object) {
-        return null;
+    public PersonDTO convert(Person person) {
+
+        PersonDTO personDTO = new PersonDTO();
+        personDTO.setId(person.getId());
+        personDTO.setName(person.getName());
+
+        return personDTO;
     }
 }
