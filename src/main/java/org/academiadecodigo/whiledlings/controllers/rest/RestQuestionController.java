@@ -61,6 +61,7 @@ public class RestQuestionController {
     public ResponseEntity<Question> showQuestion(@PathVariable Integer qid){
 
         Question question = questionService.getQuestion(qid);
+
         return new ResponseEntity<>(question, HttpStatus.OK);
     }
 }
