@@ -7,7 +7,7 @@ $(document).ready(function () {
         error: errorCallback
     });
 
-    $.ajax({
+    /*$.ajax({
         url: 'http://localhost:8080/api/' + id,
         type: 'POST',
         data: JSON.stringify({
@@ -17,7 +17,7 @@ $(document).ready(function () {
         contentType: 'application/json',
         success: successCallback,
         error: errorCallback
-    });
+    });*/
 
     function successCallback() {
 
