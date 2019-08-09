@@ -2,7 +2,6 @@ package org.academiadecodigo.whiledlings.commands;
 
 import org.academiadecodigo.whiledlings.persistence.model.Person;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
-import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
