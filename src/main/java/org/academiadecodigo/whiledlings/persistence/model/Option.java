@@ -3,6 +3,7 @@ package org.academiadecodigo.whiledlings.persistence.model;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "options")
 public class Option extends AbstractModel {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Question question;
 
     private String option;

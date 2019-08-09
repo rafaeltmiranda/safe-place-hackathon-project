@@ -10,20 +10,19 @@ import javax.persistence.Table;
 @Table(name = "answer")
 public class Answer extends AbstractModel{
 
-    @ManyToOne
-    private Question question;
+    private Integer idQuestion;
 
     @ManyToOne
     private Person person;
 
     private String answer;
 
-    public Question getQuestion() {
-        return question;
+    public Integer getIdQuestion() {
+        return idQuestion;
     }
 
-    public void setQuestion(Question question) {
-        this.question = question;
+    public void setQuestion(Integer idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public Person getPerson() {

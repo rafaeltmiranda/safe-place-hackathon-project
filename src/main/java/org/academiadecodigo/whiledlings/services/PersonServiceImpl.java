@@ -15,16 +15,11 @@ import java.util.List;
 public class PersonServiceImpl implements PersonService {
 
     private JpaPersonDao jpaPersonDao;
-    private AnswerService answerService;
+
 
     @Autowired
     public void setJpaPersonDao(JpaPersonDao jpaPersonDao) {
         this.jpaPersonDao = jpaPersonDao;
-    }
-
-    @Autowired
-    public void setAnswerService(AnswerService answerService) {
-        this.answerService = answerService;
     }
 
     @Override
@@ -71,9 +66,9 @@ public class PersonServiceImpl implements PersonService {
 
             throw new PersonNotFoundException();
         }
-
-          person.saveAnswer(answer);
-          answerService.saveAnswer(answer);
+            answer.setPerson(person);
+            person.saveAnswer(answer);
+            jpaPersonDao.saveOrUpdate(person);
     }
 
     @Override

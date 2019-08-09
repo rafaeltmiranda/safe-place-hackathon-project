@@ -3,10 +3,13 @@ package org.academiadecodigo.whiledlings.controllers.rest;
 import org.academiadecodigo.whiledlings.commands.OptionDTO;
 import org.academiadecodigo.whiledlings.commands.QuestionDTO;
 import org.academiadecodigo.whiledlings.converters.OptionToOptionDTO;
+import org.academiadecodigo.whiledlings.converters.QuestionTypeOptionsToQuestionTypeOptionsDTO;
+import org.academiadecodigo.whiledlings.converters.QuestionTypeTextToQuestionTypeTextDTO;
 import org.academiadecodigo.whiledlings.persistence.model.Option;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 import org.academiadecodigo.whiledlings.persistence.model.questions.QuestionType;
 import org.academiadecodigo.whiledlings.persistence.model.questions.QuestionTypeOptions;
+import org.academiadecodigo.whiledlings.persistence.model.questions.QuestionTypeText;
 import org.academiadecodigo.whiledlings.services.QuestionService;
 import org.graalvm.compiler.nodes.calc.IntegerDivRemNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +29,18 @@ public class RestQuestionController {
 
     private QuestionService questionService;
     private OptionToOptionDTO optionToOptionDTO;
+    private QuestionTypeOptionsToQuestionTypeOptionsDTO questTyOptToQuestTyOptDTO;
+    private QuestionTypeTextToQuestionTypeTextDTO questTyTextToQuestTyTextDTO;
+
+    @Autowired
+    public void setQuestTyTextToQuestTyTextDTO(QuestionTypeTextToQuestionTypeTextDTO questTyTextToQuestTyTextDTO) {
+        this.questTyTextToQuestTyTextDTO = questTyTextToQuestTyTextDTO;
+    }
+
+    @Autowired
+    public void setQuestTyOptToQuestTyOptDTO(QuestionTypeOptionsToQuestionTypeOptionsDTO questTyOptToQuestTyOptDTO) {
+        this.questTyOptToQuestTyOptDTO = questTyOptToQuestTyOptDTO;
+    }
 
     @Autowired
     public void setQuestionService(QuestionService questionService) {
@@ -58,9 +73,18 @@ public class RestQuestionController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{qid}")
-    public ResponseEntity<Question> showQuestion(@PathVariable Integer qid){
+    public ResponseEntity<QuestionDTO> showQuestion(@PathVariable Integer qid){
+
+        QuestionDTO questionDTO;
 
         Question question = questionService.getQuestion(qid);
-        return new ResponseEntity<>(question, HttpStatus.OK);
+
+        if (question instanceof QuestionTypeText) {
+            questionDTO = questTyTextToQuestTyTextDTO.convert((QuestionTypeText) question);
+            return new ResponseEntity<>(questionDTO, HttpStatus.OK);
+        }
+
+        questionDTO = questTyOptToQuestTyOptDTO.convert((QuestionTypeOptions) question);
+        return new ResponseEntity<>(questionDTO, HttpStatus.OK);
     }
 }
