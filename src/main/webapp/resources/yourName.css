@@ -1,6 +1,6 @@
 body {
 
-    background-image: url("resources/blur.jpg");
+    background-image: url("blur.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -12,7 +12,7 @@ body {
 
 }
 
-#bar{
+#textBar{
     text-align: center;
     background: #dfdfdf;
     border-radius: 30px;
@@ -21,7 +21,7 @@ body {
     font-family: Montserrat-Thin, sans-serif;
 }
 
-#btn{
+.button{
     font-size: 20px;
     border-radius: 10px;
     background: transparent;

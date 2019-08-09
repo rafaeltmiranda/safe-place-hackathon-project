@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../resources/yourName.css">
+    <link rel="stylesheet" type="text/css" href="resources/yourName.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="./jsLogic.js"></script>
+    <script src="resources/jsLogic.js"></script>
 
     <title>What is your name?</title>
 </head>
@@ -15,18 +15,23 @@
 
 <div>
     <div style="margin-top: 18%">
-        <h1 class="question" align="center">what's your name?</h1>
+        <h1 id="question" class="question" align="center">what's your name?</h1>
     </div>
 
     <div id="form" style="text-align: center">
 
-        <input id="bar" style="height: 25px; width: 40%" class="button" type="text"><br>
-        <input id="btn" style="height: 5%; width: 20%" class="button" type="submit" value="Next">
+        <input id="textBar" style="height: 25px; width: 40%" class="button" type="text"><br><br>
+        <input id="submitButtonName" style="height: 5%; width: 20%;" class="button" type="submit" value="Next">
+        <input id="submitButton" style="height: 5%; width: 20%; display:none;" class="button" type="submit" value="Next">
 
-        <div id="multipleChoice" style="text-align: center">
-            <button style="height: 25px; width: 20%" class="button1" type="button">It is like a beautiful poem!</button>
-            <button style="height: 25px; width: 20%" class="button1" type="button">i like potatoes with meat, it is very
-                good!
+        <div id="multipleChoice1" style="text-align: center; padding: 20px; display:none;">
+            <button style="height: 25px; min-width: 20%;" class="button" type="button">
+                It is like a beautiful poem!
+            </button>
+        </div>
+        <div id="multipleChoice2" style="text-align: center; padding: 20px;display:none;">
+            <button style="height: 25px; min-width: 20%;" class="button" type="button">
+                It is like a beautiful poem!
             </button>
         </div>
 

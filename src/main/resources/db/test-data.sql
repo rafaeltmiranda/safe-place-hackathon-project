@@ -12,7 +12,7 @@ INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LAST
 
 -- Create the question --
 INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION) VALUES
-    (2, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Questão para um milhoes de dolars e podes responder segundo as opções');
+    (2, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, TRUE, 'Questão para um milhoes de dolars e podes responder segundo as opções');
 
 -- Create a option --
 INSERT INTO OPTIONS (ID, CREATIONTIME, UPDATETIME, VERSION, IDNEXTQUESTION, OPTION, QUESTION_ID) VALUES

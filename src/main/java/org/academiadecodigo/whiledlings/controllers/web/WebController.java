@@ -37,14 +37,10 @@ public class WebController {
         return "questions";
     }
 
-    @RequestMapping("/profile/{id}")
-    public String profile(@PathVariable Integer id, Model model) {
+    @RequestMapping("/thank-you")
+    public String profile(Model model) {
 
-        Person person = personService.getById(id);
-
-        model.addAttribute("person", personToPersonDTO.convert(person));
-
-        return "profile";
+        return "thank-you";
     }
 
 }
