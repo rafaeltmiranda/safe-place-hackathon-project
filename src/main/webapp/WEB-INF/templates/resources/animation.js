@@ -1,35 +1,41 @@
-var s = $('input'),
-    f  = $('form'),
-    a = $('.after'),
-    m = $('h4');
 
-s.focus(function(){
-    if( f.hasClass('open') ) return;
-    f.addClass('in');
-    setTimeout(function(){
-        f.addClass('open');
-        f.removeClass('in');
-    }, 1300);
-});
+var id = setInterval(frame, 5);
+/*
+function frame() {
+    if (/* test for finished *//*) {
+        clearInterval(id);
+    } else {
+       /* code to change the element style *//*
+    }
+}
+*/
 
-a.on('click', function(e){
-    e.preventDefault();
-    if( !f.hasClass('open') ) return;
-    s.val('');
-    f.addClass('close');
-    f.removeClass('open');
-    setTimeout(function(){
-        f.removeClass('close');
-    }, 1300);
-})
+function myMove() {
+    var elem = document.getElementById("m");
+    var pos = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}
 
-f.submit(function(e){
-    e.preventDefault();
-    m.html('Thanks, high five!').addClass('show');
-    f.addClass('explode');
-    setTimeout(function(){
-        s.val('');
-        f.removeClass('explode');
-        m.removeClass('show');
-    }, 3000);
-})
+function myMove() {
+    var elem = document.getElementById("m");
+    var pos = 0;
+    var id = setInterval(frame, 20);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}

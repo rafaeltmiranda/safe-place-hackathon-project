@@ -1,0 +1,38 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Montserrat', serif;
+    font-size: 22px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    border-radius: 10px;
+    background: transparent;
+    font-family: Montserrat-Thin, sans-serif;
+}
+
+h1 button{
+    font-size: 50px;
+    border-radius: 10px;
+    background: transparent;
+    font-family: Montserrat-Thin,Sans-Serif;
+}
+
+#m {
+ /*   background-image: url("icon.png");*/
+    left: 35%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+
+}
+
+#b{
+    top: 10%;
+}

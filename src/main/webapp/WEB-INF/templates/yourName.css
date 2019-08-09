@@ -22,11 +22,24 @@ body {
 }
 
 #btn{
+     font-size: 20px;
+     border-radius: 10px;
+     background: transparent;
+     font-family: Montserrat-Thin, sans-serif;
+}
+
+#multipleChoice{
     font-size: 20px;
     border-radius: 10px;
     background: transparent;
     font-family: Montserrat-Thin, sans-serif;
+}
 
+button{
+    font-size: 20px;
+    border-radius: 10px;
+    background: transparent;
+    font-family: Montserrat-Thin, sans-serif;
 }
 
 
