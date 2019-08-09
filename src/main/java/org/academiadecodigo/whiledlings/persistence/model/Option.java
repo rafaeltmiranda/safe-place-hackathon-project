@@ -3,6 +3,7 @@ package org.academiadecodigo.whiledlings.persistence.model;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
