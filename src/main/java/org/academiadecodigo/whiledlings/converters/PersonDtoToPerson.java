@@ -2,7 +2,9 @@ package org.academiadecodigo.whiledlings.converters;
 
 import org.academiadecodigo.whiledlings.commands.PersonDTO;
 import org.academiadecodigo.whiledlings.persistence.model.Person;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PersonDtoToPerson implements Converter<Person, PersonDTO> {
 
     @Override

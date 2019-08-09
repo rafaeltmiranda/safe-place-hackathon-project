@@ -2,7 +2,9 @@ package org.academiadecodigo.whiledlings.converters;
 
 import org.academiadecodigo.whiledlings.commands.AnswerDTO;
 import org.academiadecodigo.whiledlings.persistence.model.Answer;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AnswerDtoToAnswer implements Converter<Answer, AnswerDTO> {
 
     @Override
