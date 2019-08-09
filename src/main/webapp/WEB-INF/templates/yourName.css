@@ -1,0 +1,19 @@
+body {
+
+    background-image: url("https://files.slack.com/files-pri/T0J8THHCZ-FM0S10KGR/officialbaclground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Vollkorn', serif;
+    font-size: 22px;
+}
+
+.question{
+
+}
+
+.button{
+
+    border-radius: 20px;
+}
+
