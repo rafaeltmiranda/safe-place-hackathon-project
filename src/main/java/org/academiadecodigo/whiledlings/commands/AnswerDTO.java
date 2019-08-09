@@ -4,10 +4,18 @@ import org.academiadecodigo.whiledlings.persistence.model.Person;
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 public class AnswerDTO {
 
     private int id;
+
+    @NotNull(message="Answer this question is important. Be heard")
+    @NotBlank(message = "Answer this question is important. Be heard")
+    @Size(min = 3)
     private String answer;
     private Person person;
     private Question question;
