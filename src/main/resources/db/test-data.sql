@@ -1,11 +1,11 @@
-insert into person (id, creationtime, updatetime, version, name) values (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 'Rui');
+--insert into person (id, creationtime, updatetime, version, name) values (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 'Rui');
+
 
 -- Insert a QuestionTypeText --
 
 INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION, IDNEXTQUESTION) VALUES
     (1, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE,
-    'Questão para um milhoes de dolars e podes responder como quiseres', 0);
-
+    'Questão para um milhoes de dolars e podes responder como quiseres', 2);
 
 
 -- Insert a QuestionTypeOptions --
