@@ -8,7 +8,7 @@
     <artifactId>uncknownproject</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>yes</name>
+    <name>Safe Place</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,11 +103,17 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring4</artifactId>
+            <version>3.0.8.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
 
-        <finalName>Unknown sheet</finalName>
+        <finalName>Safe Place - we metter</finalName>
 
         <plugins>
             <plugin>

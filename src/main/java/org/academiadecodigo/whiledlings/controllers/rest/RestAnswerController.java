@@ -1,4 +1,4 @@
-package org.academiadecodigo.whiledlings.controllers;
+package org.academiadecodigo.whiledlings.controllers.rest;
 
 import org.academiadecodigo.whiledlings.commands.AnswerDTO;
 import org.academiadecodigo.whiledlings.converters.AnswerDtoToAnswer;
