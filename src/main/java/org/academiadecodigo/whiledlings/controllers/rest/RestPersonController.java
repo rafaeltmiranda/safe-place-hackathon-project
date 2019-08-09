@@ -11,10 +11,8 @@ import org.academiadecodigo.whiledlings.exceptions.OurCorlorsNotFoundException;
 import org.academiadecodigo.whiledlings.exceptions.PersonNotFoundException;
 import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.academiadecodigo.whiledlings.persistence.model.Person;
-import org.academiadecodigo.whiledlings.services.AnswerService;
 import org.academiadecodigo.whiledlings.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -80,16 +78,14 @@ public class RestPersonController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        Person person = personDtoToPerson.convert(personDTO);
         try {
-            personService.createNewPerson(person);
+            Person savedPerson = personService.createNewPerson(personDtoToPerson.convert(personDTO));
+            return new ResponseEntity<>(personToPersonDTO.convert(savedPerson),HttpStatus.OK);
 
         } catch (OurCorlorsNotFoundException e) {
 
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
@@ -131,12 +127,13 @@ public class RestPersonController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/{pid}/answer")
     public ResponseEntity<?> saveAnswer(
-            @PathVariable Integer pid, @Valid @ModelAttribute("answer") AnswerDTO answerDTO, BindingResult bindingResult){
+            @PathVariable Integer pid, @Valid @RequestBody AnswerDTO answerDTO, BindingResult bindingResult){
 
         Answer answer = answerDtoToAnswer.convert(answerDTO);
 
         try {
             personService.saveAnswer(answer, pid);
+
         } catch (AnswerNotFoundException | PersonNotFoundException e) {
             e.printStackTrace(); // TODO: 08/08/2019 this
         }

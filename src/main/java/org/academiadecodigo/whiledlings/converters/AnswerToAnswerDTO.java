@@ -17,7 +17,6 @@ public class AnswerToAnswerDTO extends AbstractConverter<AnswerDTO, Answer> {
         answerDTO.setId(answer.getId());
         answerDTO.setAnswer(answer.getAnswer());
         answerDTO.setQuestion(answer.getIdQuestion());
-        answerDTO.setPerson(answer.getPerson());
 
         return  answerDTO;
     }
@@ -32,7 +31,6 @@ public class AnswerToAnswerDTO extends AbstractConverter<AnswerDTO, Answer> {
             answerDTO.setId(a.getId());   // TODO: 08/08/2019 meter mais legivel
             answerDTO.setAnswer(a.getAnswer());
             answerDTO.setQuestion(a.getIdQuestion());
-            answerDTO.setPerson(a.getPerson());
             answerDTOS.add(answerDTO);
         }
 
