@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "options")
 public class Option extends AbstractModel {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Question question;
 
     private String option;
