@@ -21,7 +21,7 @@ public class WebController {
     @RequestMapping("/")
     public String home(Model model) {
 
-        return "index";
+        return "newHome";
     }
 
     @RequestMapping("/values-mapping")
