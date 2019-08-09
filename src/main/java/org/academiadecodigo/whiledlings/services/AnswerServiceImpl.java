@@ -4,6 +4,7 @@ import org.academiadecodigo.whiledlings.persistence.dao.jpa.JpaAnswerDao;
 import org.academiadecodigo.whiledlings.persistence.model.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AnswerServiceImpl implements AnswerService{
@@ -15,6 +16,7 @@ public class AnswerServiceImpl implements AnswerService{
         this.jpaAnswerDao = jpaAnswerDao;
     }
 
+    @Transactional
     @Override
     public void saveAnswer(Answer answer) {
 
