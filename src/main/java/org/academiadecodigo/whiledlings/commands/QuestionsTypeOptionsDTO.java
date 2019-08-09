@@ -6,13 +6,13 @@ import java.util.List;
 
 public class QuestionsTypeOptionsDTO extends QuestionDTO{
 
-    private List<Option> options;
+    private List<OptionDTO> options;
 
-    public List<Option> getOptions() {
+    public List<OptionDTO> getOptions() {
         return options;
     }
 
-    public void setOptions(List<Option> options) {
+    public void setOptions(List<OptionDTO> options) {
         this.options = options;
     }
 }

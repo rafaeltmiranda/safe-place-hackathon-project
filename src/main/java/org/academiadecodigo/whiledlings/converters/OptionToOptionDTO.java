@@ -13,7 +13,7 @@ public class OptionToOptionDTO extends AbstractConverter<OptionDTO, Option> {
         OptionDTO optionDTO = new OptionDTO();
         optionDTO.setId(option.getId());
         optionDTO.setOption(option.getOption());
-        optionDTO.setQuestion(option.getQuestion());
+        //optionDTO.setQuestion(option.getQuestion());
         optionDTO.setIdNextQuestion(option.getIdNextQuestion());
 
         return optionDTO;

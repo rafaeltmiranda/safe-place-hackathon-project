@@ -1,6 +1,6 @@
 body {
 
-    background-image: url("https://files.slack.com/files-pri/T0J8THHCZ-FM0S10KGR/officialbaclground.jpg");
+    background: url("teste.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -16,4 +16,3 @@ body {
 
     border-radius: 20px;
 }
-

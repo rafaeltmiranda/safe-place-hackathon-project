@@ -1,4 +1,4 @@
-
+insert into person (id, creationtime, updatetime, version, name) values (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 'Rui');
 
 -- Insert a QuestionTypeText --
 
