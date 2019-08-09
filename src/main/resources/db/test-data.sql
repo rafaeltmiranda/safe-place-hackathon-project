@@ -1,22 +1,34 @@
---insert into person (id, creationtime, updatetime, version, name) values (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 'Rui');
-
+-- insert into person (id, creationtime, updatetime, version, name) values (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 'Rui');
 
 -- Insert a QuestionTypeText --
 
-INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION, IDNEXTQUESTION) VALUES
-    (1, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE,
-    'Questão para um milhoes de dolars e podes responder como quiseres', 2);
+--INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION, IDNEXTQUESTION) VALUES
+--    (1, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE,
+--    'Questão para um milhoes de dolars e podes responder como quiseres', 0);
 
 
--- Insert a QuestionTypeOptions --
+-- Open Answer Question
+    INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION, IDNEXTQUESTION) VALUES
+    (1, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'What is freedom to you?', 2),
+    (3, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'What is greatest fear?', 4);
 
--- Create the question --
+-- Insert a Option Question --
 INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION) VALUES
-    (2, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, TRUE, 'Questão para um milhoes de dolars e podes responder segundo as opções');
+    (2, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Have you helped someone recently?'),
+    (4, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Are you free?'),
+    (5, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Have you ever fought for other people´s freedom?'),
+    (6, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Do you have any regrets?'),
+    (7, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, TRUE, 'Are you comfortable in your own skin?');
 
 -- Create a option --
 INSERT INTO OPTIONS (ID, CREATIONTIME, UPDATETIME, VERSION, IDNEXTQUESTION, OPTION, QUESTION_ID) VALUES
-    (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 0, 'Esta é uma opção', 2);
-
-INSERT INTO OPTIONS (ID, CREATIONTIME, UPDATETIME, VERSION, IDNEXTQUESTION, OPTION, QUESTION_ID) VALUES
-    (2, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 0, 'Esta é outra opção', 2);
+    (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 3, 'no', 2),
+    (2, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 3, 'yes', 2),
+    (3, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 5, 'no', 4),
+    (4, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 5, 'yes', 4),
+    (5, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 6, 'no', 5),
+    (6, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 6, 'yes', 5),
+    (7, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 7, 'no', 6),
+    (8, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 7, 'yes', 6),
+    (9, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 0, 'no', 7),
+    (10, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, 0, 'yes', 7);
