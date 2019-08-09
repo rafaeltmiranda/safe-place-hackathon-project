@@ -1,10 +1,10 @@
 body {
 
-    background-image: url("https://files.slack.com/files-pri/T0J8THHCZ-FM0S10KGR/officialbaclground.jpg");
+    background-image: url("resources/blur.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-family: 'Vollkorn', serif;
+    font-family: 'Montserrat', serif;
     font-size: 22px;
 }
 
@@ -12,8 +12,22 @@ body {
 
 }
 
-.button{
-
-    border-radius: 20px;
+#bar{
+    text-align: center;
+    background: #dfdfdf;
+    border-radius: 30px;
+    color: black;
+    font-size: 25px;
+    font-family: Montserrat-Thin, sans-serif;
 }
+
+#btn{
+    font-size: 20px;
+    border-radius: 10px;
+    background: transparent;
+    font-family: Montserrat-Thin, sans-serif;
+
+}
+
+
 

@@ -1,11 +1,12 @@
 body {
+
     padding: 0;
     margin: 0;
     background: url("resources/back.png") no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-
+    box-sizing: border-box;
 }
 
 #logo{
@@ -20,15 +21,11 @@ body {
     padding-top: 30%;
 }
 
-
-
 .box{
     position:absolute;
     top:80%;
     left:50%;
     transform : translate(-50% ,-50%);
-
-
 }
 
 .btn:link,
@@ -38,12 +35,12 @@ body {
     position:relative;
     top:0;
     left:0;
-    padding:20px 400px;
-    border-radius:1000px;
+    padding:20px 40px;
+    border-radius:100px;
     display:inline-block;
     transition: all .5s;
-    font-family: Montserrat-Black;
-    font-size: 100px;
+    font-family: Montserrat-Black, sans-serif;
+    font-size: 40px;
 }
 
 .btn-white{
@@ -74,7 +71,7 @@ body {
     height:100%;
     top:0;
     left:0;
-    border-radius:1000px;
+    border-radius:100px;
     display:inline-block;
     z-index:-1;
     transition: all .5s;
@@ -92,11 +89,10 @@ body {
 @keyframes comeFromBottom{
     0%{
         opacity:0;
-        transform:translateY(1000px);
+        transform:translateY(100px);
     }
     100%{
         opacity:1;
         transform:translateY(0);
     }
 }
-
