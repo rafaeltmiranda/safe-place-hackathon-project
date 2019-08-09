@@ -80,16 +80,14 @@ public class RestPersonController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        Person person = personDtoToPerson.convert(personDTO);
         try {
-            personService.createNewPerson(person);
+            Person savedPerson = personService.createNewPerson(personDtoToPerson.convert(personDTO));
+            return new ResponseEntity<>(personToPersonDTO.convert(savedPerson),HttpStatus.OK);
 
         } catch (OurCorlorsNotFoundException e) {
 
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")

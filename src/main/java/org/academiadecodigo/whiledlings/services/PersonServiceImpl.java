@@ -42,9 +42,9 @@ public class PersonServiceImpl implements PersonService {
             throw new PersonNotFoundException();
         }
 
-        jpaPersonDao.saveOrUpdate(person);
+        Person savedPerson = jpaPersonDao.saveOrUpdate(person);
 
-        return person;
+        return savedPerson;
     }
 
     @Transactional
