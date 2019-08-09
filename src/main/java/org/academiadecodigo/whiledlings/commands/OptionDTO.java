@@ -1,22 +1,26 @@
-package org.academiadecodigo.whiledlings.persistence.model;
+package org.academiadecodigo.whiledlings.commands;
 
 import org.academiadecodigo.whiledlings.persistence.model.questions.Question;
+import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "options")
-public class Option extends AbstractModel {
+public class OptionDTO {
 
-    @ManyToOne
+    private int id;
+
     private Question question;
 
     private String option;
 
     private Integer idNextQuestion;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Question getQuestion() {
         return question;
