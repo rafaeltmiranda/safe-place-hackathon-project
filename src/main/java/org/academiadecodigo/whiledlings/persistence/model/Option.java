@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "option")
+@Table(name = "options")
 public class Option extends AbstractModel {
 
     @ManyToOne
