@@ -12,7 +12,6 @@ public class AnswerDtoToAnswer implements Converter<Answer, AnswerDTO> {
 
         Answer answer = new Answer();
         answer.setAnswer(answerDTO.getAnswer());
-        answer.setPerson(answerDTO.getPerson());
         answer.setQuestion(answerDTO.getQuestion());
 
         return answer;
