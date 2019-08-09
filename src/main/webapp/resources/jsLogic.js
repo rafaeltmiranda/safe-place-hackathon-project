@@ -7,6 +7,14 @@ $(document).ready(function () {
     var opt1next;
     var opt2next;
 
+    function hideAll() {
+        $('#textBar').hide();
+        $('#submitButtonName').hide();
+        $('#submitButton').hide();
+        $('#multipleChoice1').hide();
+        $('#multipleChoice2').hide();
+    }
+
     $('#submitButtonName').click(function(){
 
         $.ajax({
@@ -36,14 +44,20 @@ $(document).ready(function () {
 
     });
 
-    $('#multipleChoice1').click(function () {
+    $('#opt1').click(function () {
+
+        hideAll();
         nextQuestion = opt1next;
         getNextQuestion(nextQuestion);
+
     });
 
-    $('#multipleChoice2').click(function () {
+    $('#opt2').click(function () {
+
+        hideAll();
         nextQuestion = opt2next;
         getNextQuestion(nextQuestion);
+
     });
 
     function getNextQuestion(idNext) {
@@ -80,6 +94,7 @@ $(document).ready(function () {
         lastQuestion = response.lastQuestion;
 
         if (response.idNextQuestion !== undefined) {
+            hideAll();
             $('#textBar').val('');
             $('#textBar').show();
             $('#submitButton').show();
@@ -87,10 +102,10 @@ $(document).ready(function () {
             return;
         }
 
-        $('#multipleChoice1').val(response.options[0].option);
+        $('#opt1').val(response.options[0].option);
         $('#multipleChoice1').show();
         opt1next = response.options[0].idNextQuestion;
-        $('#multipleChoice2').val(response.options[1].option);
+        $('#opt2').val(response.options[1].option);
         $('#multipleChoice2').show();
         opt2next = response.options[1].idNextQuestion;
 
@@ -101,13 +116,7 @@ $(document).ready(function () {
 
     }
 
-    function hideAll() {
-        $('#textBar').hide();
-        $('#submitButtonName').hide();
-        $('#submitButton').hide();
-        $('#multipleChoise1').hide();
-        $('#multipleChoice2').hide();
-    }
+
 
 });
 

@@ -9,16 +9,16 @@
 
 -- Open Answer Question
     INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION, IDNEXTQUESTION) VALUES
-    (1, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'What is freedom to you?', 2),
-    (3, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'What is greatest fear?', 4);
+    (1, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'what is freedom to you?', 2),
+    (3, 'QuestionTypeText', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'what is your greatest fear?', 4);
 
 -- Insert a Option Question --
 INSERT INTO QUESTION (ID, QUESTION_TYPE, CREATIONTIME, UPDATETIME, VERSION, LASTQUESTION, QUESTION) VALUES
-    (2, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Have you helped someone recently?'),
-    (4, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Are you free?'),
-    (5, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Have you ever fought for other people´s freedom?'),
-    (6, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'Do you have any regrets?'),
-    (7, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, TRUE, 'Are you comfortable in your own skin?');
+    (2, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'have you helped someone recently?'),
+    (4, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'are you free?'),
+    (5, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'have you ever fought for other people´s freedom?'),
+    (6, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, FALSE, 'do you have any regrets?'),
+    (7, 'QuestionTypeOptions', TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:18:53.819', 0, TRUE, 'are you comfortable in your own skin?');
 
 -- Create a option --
 INSERT INTO OPTIONS (ID, CREATIONTIME, UPDATETIME, VERSION, IDNEXTQUESTION, OPTION, QUESTION_ID) VALUES
