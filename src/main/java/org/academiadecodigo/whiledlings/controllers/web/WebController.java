@@ -21,19 +21,20 @@ public class WebController {
     @RequestMapping("/")
     public String home(Model model) {
 
-        return "index";
+        return "newHome";
     }
 
-    @RequestMapping("/values-mapping")
-    public String valuesMapping(Model model) {
+    @RequestMapping("/who-are-you")
+    public String name(Model model) {
 
-        return "valuesMapping";
+        return "yourName";
     }
 
-    @RequestMapping("/feed")
-    public String feed(Model model) {
+    @RequestMapping("/start/{id}")
+    public String valuesMapping(@PathVariable Integer id, Model model) {
 
-        return "feed";
+        model.addAttribute("id_Person", id);
+        return "questions";
     }
 
     @RequestMapping("/profile/{id}")
