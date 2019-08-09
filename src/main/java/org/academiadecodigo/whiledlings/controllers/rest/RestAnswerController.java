@@ -9,12 +9,13 @@ import org.academiadecodigo.whiledlings.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/answer")
 public class RestAnswerController {
 
     private PersonService personService;
@@ -31,15 +32,17 @@ public class RestAnswerController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/{pid}/new-answer")
-    public ResponseEntity<?> saveAnswer(@PathVariable Integer pid, @Valid @RequestParam AnswerDTO answerDTO){
+    public ResponseEntity<?> saveAnswer(@PathVariable Integer pid, @Valid @ModelAttribute("answer") AnswerDTO answerDTO, BindingResult bindingResult){
 
         Answer answer = answerDtoToAnswer.convert(answerDTO);
+
+        System.out.println(answer.getAnswer());
 
         try {
             personService.saveAnswer(answer, pid);
         } catch (AnswerNotFoundException | PersonNotFoundException e) {
             e.printStackTrace(); // TODO: 08/08/2019 this
         }
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

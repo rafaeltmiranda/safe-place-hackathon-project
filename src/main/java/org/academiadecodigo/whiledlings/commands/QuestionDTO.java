@@ -1,12 +1,21 @@
 package org.academiadecodigo.whiledlings.commands;
 
-public class QuestionDTO {
+public abstract class QuestionDTO {
 
+    private Integer id;
     private String question;
     private boolean lastQuestion;
 
     public String getQuestion() {
         return question;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setQuestion(String question) {

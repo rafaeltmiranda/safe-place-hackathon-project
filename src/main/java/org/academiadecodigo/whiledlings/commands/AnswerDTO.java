@@ -17,7 +17,7 @@ public class AnswerDTO {
     @Size(min = 3)
     private String answer;
     private Person person;
-    private Question question;
+    private Integer question;
 
     public int getId() {
         return id;
@@ -43,11 +43,11 @@ public class AnswerDTO {
         this.person = person;
     }
 
-    public Question getQuestion() {
+    public Integer getQuestion() {
         return question;
     }
 
-    public void setQuestion(Question question) {
+    public void setQuestion(Integer question) {
         this.question = question;
     }
 }
