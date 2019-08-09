@@ -22,6 +22,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class RestPersonController {
@@ -73,13 +74,18 @@ public class RestPersonController {
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public ResponseEntity<?> addPerson(@Valid @RequestBody PersonDTO personDTO, BindingResult bindingResult) {
 
+        System.out.println("--------------------------------------");
+        System.out.println(personDTO.getName());
+        System.out.println("--------------------------------------");
 
         if (bindingResult.hasErrors() || personDTO == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         try {
+
             Person savedPerson = personService.createNewPerson(personDtoToPerson.convert(personDTO));
+
             return new ResponseEntity<>(personToPersonDTO.convert(savedPerson),HttpStatus.OK);
 
         } catch (OurCorlorsNotFoundException e) {
