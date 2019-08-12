@@ -40,7 +40,7 @@ public class WebController {
     @RequestMapping("/thank-you")
     public String profile(Model model) {
 
-        return "thank-you";
+        return "final";
     }
 
 }

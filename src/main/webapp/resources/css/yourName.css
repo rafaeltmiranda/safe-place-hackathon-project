@@ -8,9 +8,7 @@ body {
     font-size: 22px;
 }
 
-.question{
 
-}
 
 #textBar{
     text-align: center;
@@ -21,11 +19,12 @@ body {
     font-family: Montserrat-Thin, sans-serif;
 }
 
-.button{
+.button {
     font-size: 20px;
     border-radius: 10px;
     background: transparent;
     font-family: Montserrat-Thin, sans-serif;
+}
 
 #multipleChoice1, #multipleChoice2{
     font-size: 20px;
