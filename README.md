@@ -9,9 +9,11 @@ Today we have a not so different world. We have other forms of slavery. Have you
 We decided to create a social network where the people can share their outbursts and experiences. But everything in ths social network should point to the theme. So we decide to start with the registration module as our MVP, where the user immerse into an experience that makes him think. By the end we have a profile created.
 
 ## Development
+We divided the project into six four-hour sprints.
 
-
-
+Initially we decided to investigate more about the song, about the singer and why the song was made. We then brainstormed the basic idea for the project. When the group was satisfied with the idea, we set out to build the UML and map the database.
+Afterwards, we split the group into two parts: backend and frontend. The frontend group began working on the project design using HTML and CSS technologies.
+The backend group started structuring the project by creating packages and making interfaces. After that we created the classes and started implementing their methods, with the intention of ensuring fluid database comunication. Persistence tests were made using Postman software. Finally, we joined backend and frontend development together.
 
 ## Paradigm
 - OOP
