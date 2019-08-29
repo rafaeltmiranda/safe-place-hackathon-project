@@ -16,32 +16,32 @@ Afterwards, we split the group into two parts: backend and frontend. The fronten
 The backend group started structuring the project by creating packages and making interfaces. After that we created the classes and started implementing their methods, with the intention of ensuring fluid database comunication. Persistence tests were made using Postman software. Finally, we joined backend and frontend development together.
 
 ## Paradigm
-- OOP
-- AOP
+    OOP
+    AOP
 
 ## Methodologies
-- Agile
-- SCRUM
+    Agile
+    SCRUM
 
 ## Architecture
-- MVC
+    MVC
 
 ## Technologies
-- JPA
-- Spring MVC
-- Java
-- Hibernate
-- Thymeleaf
-- Javascript
-- JQuery
-- Ajax
-- HTML 5
-- CSS 3
-- MySQL
+    JPA
+    Spring MVC
+    Java
+    Hibernate
+    Thymeleaf
+    Javascript
+    JQuery
+    Ajax
+    HTML 5
+    CSS 3
+    MySQL
 
 ## System requirements
-- Apache Tomcat
-- Maven
+    Apache Tomcat
+    Maven
 
 ## Build the server
 Clone this project and run the command `$ mvn tomcat7:deploy` on the project's folder to deploy into your local tomcat service.
