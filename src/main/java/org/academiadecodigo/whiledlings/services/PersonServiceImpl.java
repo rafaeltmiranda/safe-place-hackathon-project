@@ -66,9 +66,9 @@ public class PersonServiceImpl implements PersonService {
 
             throw new PersonNotFoundException();
         }
-            answer.setPerson(person);
-            person.saveAnswer(answer);
-            jpaPersonDao.saveOrUpdate(person);
+        answer.setPerson(person);
+        person.saveAnswer(answer);
+        jpaPersonDao.saveOrUpdate(person);
     }
 
     @Override
